@@ -142,8 +142,6 @@ private fun HomeScreen() {
             color = MaterialTheme.colorScheme.onBackground,
             fontSize = 16.sp
         )
-
-        Spacer(Modifier.height(4.dp))
         RemindersCard()
     }
 }
@@ -155,19 +153,25 @@ private fun RemindersCard() {
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         shape = RoundedCornerShape(20.dp)
     ) {
-        Column(Modifier.padding(20.dp)) {
+        Column(
+            Modifier
+                .fillMaxWidth()
+                .padding(20.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically)
+        ) {
             Text(
                 "Daily pill reminders",
                 color = MaterialTheme.colorScheme.primary,
                 fontWeight = FontWeight.Bold,
-                fontSize = 14.sp
+                fontSize = 24.sp
             )
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(4.dp))
             ReminderScheduler.slots.forEach { slot ->
                 Text(
                     "%02d:%02d  —  %s".format(slot.hour, slot.minute, slot.title),
                     color = MaterialTheme.colorScheme.onSurface,
-                    fontSize = 15.sp,
+                    fontSize = 22.sp,
                     modifier = Modifier.padding(vertical = 2.dp)
                 )
             }
