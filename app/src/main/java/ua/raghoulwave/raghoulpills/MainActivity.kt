@@ -131,16 +131,6 @@ private fun HomeScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically)
     ) {
-        Image(
-            bitmap = ImageBitmap.imageResource(R.drawable.artwork),
-            contentDescription = "App artwork",
-            contentScale = ContentScale.Fit,
-            filterQuality = FilterQuality.None,
-            modifier = Modifier
-                .size(180.dp)
-                .clip(RoundedCornerShape(20.dp))
-        )
-
         Text(
             text = now.format(timeFmt),
             color = MaterialTheme.colorScheme.onBackground,
