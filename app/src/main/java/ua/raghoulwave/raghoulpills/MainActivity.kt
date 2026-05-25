@@ -162,7 +162,7 @@ private fun RemindersCard() {
         ) {
             Text(
                 "Daily pill reminders",
-                color = MaterialTheme.colorScheme.primary,
+                color = MaterialTheme.colorScheme.onSurface,
                 fontWeight = FontWeight.Bold,
                 fontSize = 24.sp
             )
