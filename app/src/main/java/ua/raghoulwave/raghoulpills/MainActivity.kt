@@ -111,14 +111,6 @@ private fun HomeScreen() {
     val timeFmt = remember { DateTimeFormatter.ofPattern("HH:mm:ss", Locale.getDefault()) }
     val dateFmt = remember { DateTimeFormatter.ofPattern("EEEE, d MMMM", Locale.getDefault()) }
 
-    Image(
-        painter = painterResource(id = R.drawable.pill),
-        contentDescription = "Logo",
-        modifier = Modifier
-            .size(10.dp),
-        contentScale = ContentScale.Inside,
-        alignment = Alignment.TopCenter
-    )
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -158,7 +150,7 @@ private fun RemindersCard() {
             verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically)
         ) {
             Text(
-                "Daily pill reminders",
+                "Щоденні пігулки",
                 color = MaterialTheme.colorScheme.onSurface,
                 fontWeight = FontWeight.Bold,
                 fontSize = 24.sp
