@@ -24,9 +24,9 @@ object ReminderScheduler {
     )
 
     val slots = listOf(
-        Slot(1001, 7, 30, "Ранок \uD83C\uDF05", "Час закидуватись!"),
-        Slot(1002, 18, 30, "Вечір \uD83C\uDF07", "Час закидуватись!"),
-        Slot(1003, 23, 30, "Ніч \uD83C\uDF19", "Час закидуватись!")
+        Slot(1001, 7, 30, "Ранок \uD83C\uDF05", "Випий пігулки, няшка <3"),
+        Slot(1002, 15, 30, "Вечір \uD83C\uDF07", "Випий пігулки, няшка <3"),
+        Slot(1003, 23, 30, "Ніч \uD83C\uDF19", "Випий пігулки, няшка <3")
     )
 
     fun scheduleAll(context: Context) = slots.forEach { schedule(context, it) }
