@@ -150,7 +150,7 @@ private fun RemindersCard() {
             verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically)
         ) {
             Text(
-                "Щоденні пігулки",
+                "Щоденні пігулки!!",
                 color = MaterialTheme.colorScheme.onSurface,
                 fontWeight = FontWeight.Bold,
                 fontSize = 24.sp
