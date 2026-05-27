@@ -1,6 +1,7 @@
 package ua.raghoulwave.raghoulpills
 
 import android.Manifest
+import android.R
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.media.Image
@@ -44,10 +45,15 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.Locale
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.runtime.*
+import androidx.compose.material3.*
+import androidx.compose.foundation.layout.*
 
 class MainActivity : ComponentActivity() {
 
@@ -137,6 +143,9 @@ private fun HomeScreen() {
 
 @Composable
 private fun RemindersCard() {
+
+    var count by remember { mutableIntStateOf(0) }
+
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
@@ -156,6 +165,13 @@ private fun RemindersCard() {
                 fontSize = 24.sp
             )
             Spacer(Modifier.height(4.dp))
+            Text(
+                "Пігулок випито: $count",
+                color = MaterialTheme.colorScheme.onSurface,
+                fontWeight = FontWeight.Bold,
+                fontSize = 24.sp
+            )
+            Spacer(Modifier.height(4.dp))
             ReminderScheduler.slots.forEach { slot ->
                 Text(
                     "%02d:%02d  —  %s".format(slot.hour, slot.minute, slot.title),
@@ -163,6 +179,15 @@ private fun RemindersCard() {
                     fontSize = 22.sp,
                     modifier = Modifier.padding(vertical = 2.dp)
                 )
+            }
+            OutlinedButton(
+                onClick = {
+                    count++
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+            ) {
+                Text("Випила!")
             }
         }
     }
